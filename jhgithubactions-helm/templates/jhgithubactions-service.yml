@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jhgithubactions
+  namespace: jh-github-actions
+  labels:
+    app: jhgithubactions
+spec:
+  selector:
+    app: jhgithubactions
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
